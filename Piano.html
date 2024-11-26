@@ -25,9 +25,9 @@
                             <script type="text/javascript">
                                 function showChord(){
                                     colorClear();
-                                    var chord1=selChord.value;
                                     switch(document.getElementById("selChord").value){
-                                    case "C_M":
+                                    //C Chords
+                                        case "C_M":
                                         document.getElementById("C4").style.backgroundColor="green";
                                         document.getElementById("E4").style.backgroundColor="green";
                                         document.getElementById("G4").style.backgroundColor="green";
@@ -37,6 +37,17 @@
                                         document.getElementById("Ds4").style.backgroundColor="green";
                                         document.getElementById("G4").style.backgroundColor="green";
                                         break;
+                                    case "Cs_M":
+                                        document.getElementById("Cs4").style.backgroundColor="green";
+                                        document.getElementById("F4").style.backgroundColor="green";
+                                        document.getElementById("Gs4").style.backgroundColor="green";
+                                        break;
+                                    case "Cs_m":
+                                        document.getElementById("Cs4").style.backgroundColor="green";
+                                        document.getElementById("E4").style.backgroundColor="green";
+                                        document.getElementById("Gs4").style.backgroundColor="green";
+                                        break;
+                                    //D Chords
                                     case "D_M":
                                         document.getElementById("D4").style.backgroundColor="green";
                                         document.getElementById("Fs4").style.backgroundColor="green";
@@ -47,6 +58,17 @@
                                         document.getElementById("F4").style.backgroundColor="green";
                                         document.getElementById("A4").style.backgroundColor="green";
                                         break;
+                                    case "Ds_M":
+                                        document.getElementById("Ds4").style.backgroundColor="green";
+                                        document.getElementById("G4").style.backgroundColor="green";
+                                        document.getElementById("As4").style.backgroundColor="green";
+                                        break;
+                                    case "Ds_m":
+                                        document.getElementById("Ds4").style.backgroundColor="green";
+                                        document.getElementById("Fs4").style.backgroundColor="green";
+                                        document.getElementById("As4").style.backgroundColor="green";
+                                        break;    
+                                    //E Chords    
                                     case "E_M":
                                         document.getElementById("E4").style.backgroundColor="green";
                                         document.getElementById("Gs4").style.backgroundColor="green";
@@ -57,16 +79,28 @@
                                         document.getElementById("G4").style.backgroundColor="green";
                                         document.getElementById("B4").style.backgroundColor="green";
                                         break;
+                                    //F Chords    
                                     case "F_M":
-                                        document.getElementById("F3").style.backgroundColor="green";
-                                        document.getElementById("A3").style.backgroundColor="green";
-                                        document.getElementById("C3").style.backgroundColor="green";
+                                        document.getElementById("F4").style.backgroundColor="green";
+                                        document.getElementById("A4").style.backgroundColor="green";
+                                        document.getElementById("C4").style.backgroundColor="green";
                                         break;
                                     case "F_m":
-                                        document.getElementById("Fs4").style.backgroundColor="green";
-                                        document.getElementById("A4").style.backgroundColor="green";
+                                        document.getElementById("F3").style.backgroundColor="green";
+                                        document.getElementById("Gs3").style.backgroundColor="green";
+                                        document.getElementById("C4").style.backgroundColor="green";
+                                        break;
+                                    case "Fs_M":
+                                        document.getElementById("Fs3").style.backgroundColor="green";
+                                        document.getElementById("As3").style.backgroundColor="green";
                                         document.getElementById("Cs4").style.backgroundColor="green";
                                         break;
+                                    case "Fs_m":
+                                        document.getElementById("Fs3").style.backgroundColor="green";
+                                        document.getElementById("A3").style.backgroundColor="green";
+                                        document.getElementById("Cs4").style.backgroundColor="green";
+                                        break;
+                                    //G Chords    
                                     case "G_M":
                                         document.getElementById("G3").style.backgroundColor="green";
                                         document.getElementById("B3").style.backgroundColor="green";
@@ -77,6 +111,17 @@
                                         document.getElementById("As3").style.backgroundColor="green";
                                         document.getElementById("D4").style.backgroundColor="green";
                                         break;
+                                    case "Gs_M":
+                                        document.getElementById("Gs3").style.backgroundColor="green";
+                                        document.getElementById("C4").style.backgroundColor="green";
+                                        document.getElementById("Ds4").style.backgroundColor="green";
+                                        break;
+                                    case "Gs_m":
+                                        document.getElementById("Gs3").style.backgroundColor="green";
+                                        document.getElementById("B3").style.backgroundColor="green";
+                                        document.getElementById("Ds4").style.backgroundColor="green";
+                                        break;
+                                    //A Chords
                                     case "A_M":
                                         document.getElementById("A3").style.backgroundColor="green";
                                         document.getElementById("Cs4").style.backgroundColor="green";
@@ -87,10 +132,21 @@
                                         document.getElementById("C4").style.backgroundColor="green";
                                         document.getElementById("E4").style.backgroundColor="green";
                                         break; 
+                                    case "As_M":
+                                        document.getElementById("As3").style.backgroundColor="green";
+                                        document.getElementById("D4").style.backgroundColor="green";
+                                        document.getElementById("F4").style.backgroundColor="green";
+                                        break;
+                                    case "As_m":
+                                        document.getElementById("As3").style.backgroundColor="green";
+                                        document.getElementById("Cs4").style.backgroundColor="green";
+                                        document.getElementById("F4").style.backgroundColor="green";
+                                        break;
+                                    //B Chords
                                     case "B_M":
                                         document.getElementById("B3").style.backgroundColor="green";
-                                        document.getElementById("Ds3").style.backgroundColor="green";
-                                        document.getElementById("Fs3").style.backgroundColor="green";
+                                        document.getElementById("Ds4").style.backgroundColor="green";
+                                        document.getElementById("Fs4").style.backgroundColor="green";
                                         break;
                                     case "B_m":
                                         document.getElementById("B3").style.backgroundColor="green";
@@ -115,13 +171,18 @@
                             </script>
                             <select id="selChord">
                                 <option value="C_M">C Major</option><option value="C_m">C Minor</option>
+                                <option value="Cs_M">C# Major</option><option value="Cs_m">C# Minor</option>
                                 <option value="D_M">D Major</option><option value="D_m">D Minor</option>
+                                <option value="Ds_M">D# Major</option><option value="Ds_m">D# Minor</option>
                                 <option value="E_M">E Major</option><option value="E_m">E Minor</option>
                                 <option value="F_M">F Major</option><option value="F_m">F Minor</option>
+                                <option value="Fs_M">F# Major</option><option value="Fs_m">F# Minor</option>
                                 <option value="G_M">G Major</option><option value="G_m">G Minor</option>
+                                <option value="Gs_M">G# Major</option><option value="Gs_m">G# Minor</option>
                                 <option value="A_M">A Major</option><option value="A_m">A Minor</option>
+                                <option value="As_M">A# Major</option><option value="As_m">A# Minor</option>
                                 <option value="B_M">B Major</option><option value="B_m">B Minor</option>
-                        </select>
+                            </select>
                         <input type="button" value="Show Chord" onclick="showChord()"/>
                         <input type="button" value="Clear" onclick="colorClear()"/>
                         <p></p>
