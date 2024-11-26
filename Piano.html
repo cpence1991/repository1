@@ -4,64 +4,154 @@
         <title>Piano</title>
                     <style>
                         .white{
+                            position:relative;
                             float:left;
                             background-color: white;
                             height:300px;
                             width:30px;
                             border: 2px solid black;
+                            text-align:center;
                         }
-                        .black{
-                            float: left;
+                        .black{ 
                             background-color: black;
                             height:225px;
                             width:25px;
+                            border: 2px solid black;
                         }
-                            </style>
+                    </style>
                             </head>
                         <body>
-                            <h2>Piano</h2>
-                        <audio id="C"><source src="Music\C.mp3" type="audio/mp3"></audio>
-                        <audio id="Cs"><source src="Music\Cs.mp3" type="audio/mp3"></audio>
-                        <audio id="D"><source src="Music/D.mp3" type="audio/mp3"></audio>
-                        <audio id="Ds"><source src="Music\Ds.mp3" type="audio/mp3"></audio>    
-                        <audio id="E"><source src="Music/E.mp3" type="audio/mp3"></audio>
-                        <audio id="F"><source src="Music/F.mp3" type="audio/mp3"></audio>
-                        <audio id="Fs"><source src="Music\Fs.mp3" type="audio/mp3"></audio>    
-                        <audio id="G"><source src="Music/G.mp3" type="audio/mp3"></audio>
-                        <audio id="Gs"><source src="Music\Gs.mp3" type="audio/mp3"></audio>
-                        <audio id="A"><source src="Music/A.mp3" type="audio/mp3"></audio>
-                        <audio id="As"><source src="Music\As.mp3" type="audio/mp3"></audio>
-                        <audio id="B"><source src="Music/B.mp3" type="audio/mp3"></audio>
-                        <audio id="C5"><source src="Music/C5.mp3" type="audio/mp3"></audio>
-                            
-                        <audio id="Ds"><source src="Music/Ds.mp3" type="audio/mp3"></audio>
-                        
-                        
-                        <p>Press piano keys to play</p>
-                        <div id="piano" style="position:absolute;border:black; border-style: solid; border-width: 4px;">
-                        <div class="white" id="C" onmouseover="playC()"></div>
-                        <div class="black" id="Cs" onclick="playCs()"></div> 
-                        <div class="white" id="D" onclick="playD()"></div>
-                        <div class="black" id="Ds" onclick="playDs()"></div> 
-                        <div class="white" id="E" onclick="playE()"></div>
-                        <div class="white" id="F" onclick="playF()"></div>
-                        <div class="black" id="Fs" onclick="playFs()"></div> 
-                        <div class="white" id="G" onclick="playG()"></div>
-                        <div class="black" id="Gs" onclick="playGs()"></div> 
-                        <div class="white" id="A" onclick="playA()"></div>
-                        <div class="black" id="As" onclick="playAs()"></div> 
-                        <div class="white" id="B" onclick="playB()"></div>
-                        <div class="white" id="C5" onclick="playC5()"></div></div>
-                        
-                        
-                        <script>
-                        function playC() { document.getElementById("C").play();} function playCs() { document.getElementById("Cs").play();}
-                        function playD() { document.getElementById("D").play();} function playDs() { document.getElementById("Ds").play();}
-                        function playE() { document.getElementById("E").play();}
-                        function playF() { document.getElementById("F").play();} function playFs() { document.getElementById("Fs").play();}
-                        function playG() { document.getElementById("G").play();} function playGs() { document.getElementById("Gs").play();}
-                        function playA() { document.getElementById("A").play();} function playAs() { document.getElementById("As").play();}
-                        function playB() { document.getElementById("B").play();}
-                        function playC5() { document.getElementById("C5").play();}
-                        </script>
-                        </body>
+                            <h2 id="title">Piano</h2>
+                            <script type="text/javascript">
+                                function showChord(){
+                                    colorClear();
+                                    var chord1=selChord.value;
+                                    switch(document.getElementById("selChord").value){
+                                    case "C_M":
+                                        document.getElementById("C4").style.backgroundColor="green";
+                                        document.getElementById("E4").style.backgroundColor="green";
+                                        document.getElementById("G4").style.backgroundColor="green";
+                                        break;
+                                    case "C_m":
+                                        document.getElementById("C4").style.backgroundColor="green";
+                                        document.getElementById("Ds4").style.backgroundColor="green";
+                                        document.getElementById("G4").style.backgroundColor="green";
+                                        break;
+                                    case "D_M":
+                                        document.getElementById("D4").style.backgroundColor="green";
+                                        document.getElementById("Fs4").style.backgroundColor="green";
+                                        document.getElementById("A4").style.backgroundColor="green";
+                                        break;
+                                    case "D_m":
+                                        document.getElementById("D4").style.backgroundColor="green";
+                                        document.getElementById("F4").style.backgroundColor="green";
+                                        document.getElementById("A4").style.backgroundColor="green";
+                                        break;
+                                    case "E_M":
+                                        document.getElementById("E4").style.backgroundColor="green";
+                                        document.getElementById("Gs4").style.backgroundColor="green";
+                                        document.getElementById("B4").style.backgroundColor="green";
+                                        break;
+                                    case "E_m":
+                                        document.getElementById("E4").style.backgroundColor="green";
+                                        document.getElementById("G4").style.backgroundColor="green";
+                                        document.getElementById("B4").style.backgroundColor="green";
+                                        break;
+                                    case "F_M":
+                                        document.getElementById("F3").style.backgroundColor="green";
+                                        document.getElementById("A3").style.backgroundColor="green";
+                                        document.getElementById("C3").style.backgroundColor="green";
+                                        break;
+                                    case "F_m":
+                                        document.getElementById("Fs4").style.backgroundColor="green";
+                                        document.getElementById("A4").style.backgroundColor="green";
+                                        document.getElementById("Cs4").style.backgroundColor="green";
+                                        break;
+                                    case "G_M":
+                                        document.getElementById("G3").style.backgroundColor="green";
+                                        document.getElementById("B3").style.backgroundColor="green";
+                                        document.getElementById("D4").style.backgroundColor="green";
+                                        break;
+                                    case "G_m":
+                                        document.getElementById("G3").style.backgroundColor="green";
+                                        document.getElementById("As3").style.backgroundColor="green";
+                                        document.getElementById("D4").style.backgroundColor="green";
+                                        break;
+                                    case "A_M":
+                                        document.getElementById("A3").style.backgroundColor="green";
+                                        document.getElementById("Cs4").style.backgroundColor="green";
+                                        document.getElementById("E4").style.backgroundColor="green";
+                                        break;
+                                    case "A_m":
+                                        document.getElementById("A3").style.backgroundColor="green";
+                                        document.getElementById("C4").style.backgroundColor="green";
+                                        document.getElementById("E4").style.backgroundColor="green";
+                                        break; 
+                                    case "B_M":
+                                        document.getElementById("B3").style.backgroundColor="green";
+                                        document.getElementById("Ds3").style.backgroundColor="green";
+                                        document.getElementById("Fs3").style.backgroundColor="green";
+                                        break;
+                                    case "B_m":
+                                        document.getElementById("B3").style.backgroundColor="green";
+                                        document.getElementById("D4").style.backgroundColor="green";
+                                        document.getElementById("Fs4").style.backgroundColor="green";
+                                        break;               
+                                    default:
+                                        colorClear();
+                                        break;
+                                    }
+                                }
+                                function colorClear() {
+                                    const wElements = document.querySelectorAll('.white');
+                                    wElements.forEach(element => {
+                                    element.style.backgroundColor = 'white';
+                                    });
+                                    const bElements = document.querySelectorAll('.black');
+                                    bElements.forEach(element => {
+                                    element.style.backgroundColor = 'black';
+                                    });
+                                }
+                            </script>
+                            <select id="selChord">
+                                <option value="C_M">C Major</option><option value="C_m">C Minor</option>
+                                <option value="D_M">D Major</option><option value="D_m">D Minor</option>
+                                <option value="E_M">E Major</option><option value="E_m">E Minor</option>
+                                <option value="F_M">F Major</option><option value="F_m">F Minor</option>
+                                <option value="G_M">G Major</option><option value="G_m">G Minor</option>
+                                <option value="A_M">A Major</option><option value="A_m">A Minor</option>
+                                <option value="B_M">B Major</option><option value="B_m">B Minor</option>
+                        </select>
+                        <input type="button" value="Show Chord" onclick="showChord()"/>
+                        <input type="button" value="Clear" onclick="colorClear()"/>
+                        <p></p>
+                        <!-- Naturals -->
+                         <div id="piano">
+                        <div class="white" id="C3"><text style="position:absolute; bottom:0; left: 7;">C3</text></div>
+                        <div class="white" id="D3" ><text style="position:absolute; bottom:0; left: 7;">D3</text></div> 
+                        <div class="white" id="E3"><text style="position:absolute; bottom:0; left: 7;">E3</text></div>
+                        <div class="white" id="F3" ><text style="position:absolute; bottom:0; left: 7;">F3</text></div> 
+                        <div class="white" id="G3"><text style="position:absolute; bottom:0; left: 7;">G3</text></div>
+                        <div class="white" id="A3" ><text style="position:absolute; bottom:0; left: 7;">A3</text></div> 
+                        <div class="white" id="B3"><text style="position:absolute; bottom:0; left: 7;">B3</text></div>
+                        <div class="white" id="C4" ><text style="position:absolute; bottom:0; left: 7;">C4</text></div> 
+                        <div class="white" id="D4" ><text style="position:absolute; bottom:0; left: 7;">D4</text></div> 
+                        <div class="white" id="E4"><text style="position:absolute; bottom:0; left: 7;">E4</text></div>
+                        <div class="white" id="F4" ><text style="position:absolute; bottom:0; left: 7;">F4</text></div> 
+                        <div class="white" id="G4"><text style="position:absolute; bottom:0; left: 7;">G4</text></div>
+                        <div class="white" id="A4" ><text style="position:absolute; bottom:0; left: 7;">A4</text></div> 
+                        <div class="white" id="B4"><text style="position:absolute; bottom:0; left: 7;">B4</text></div>
+                        <div class="white" id="C5" ><text style="position:absolute; bottom:0; left: 7;">C5</text></div>    
+                        <!-- SHARPS     -->
+                        <div class="black" id="Cs3" style="position: absolute; left:27;"><text style="font-size:12; position:absolute; bottom:0; left: 2.5; color:white">C#3</text></div>
+                        <div class="black" id="Ds3" style="position: absolute; left:60;"><text style="font-size:12; position:absolute; bottom:0; left: 2.5; color:white">D#3</text></div>
+                        <div class="black" id="Fs3" style="position: absolute; left:129;"><text style="font-size:12; position:absolute; bottom:0; left: 2.5; color:white">F#3</text></div>
+                        <div class="black" id="Gs3" style="position: absolute; left:162;"><text style="font-size:12; position:absolute; bottom:0; left: 2.5; color:white">G#3</text></div>
+                        <div class="black" id="As3" style="position: absolute; left:195;"><text style="font-size:12; position:absolute; bottom:0; left: 2.5; color:white">A#3</text></div>
+                        <div class="black" id="Cs4" style="position: absolute; left:264;"><text style="font-size:12; position:absolute; bottom:0; left: 2.5; color:white">C#4</text></div>
+                        <div class="black" id="Ds4" style="position: absolute; left:299;"><text style="font-size:12; position:absolute; bottom:0; left: 2.5; color:white">D#4</text></div>
+                        <div class="black" id="Fs4" style="position: absolute; left:366;"><text style="font-size:12; position:absolute; bottom:0; left: 2.5; color:white">F#4</text></div>
+                        <div class="black" id="Gs4" style="position: absolute; left:399;"><text style="font-size:12; position:absolute; bottom:0; left: 2.5; color:white">G#4</text></div>
+                        <div class="black" id="As4" style="position: absolute; left:434;"><text style="font-size:12; position:absolute; bottom:0; left: 2.5; color:white">A#4</text></div>
+                        </div>
+                    </body>
